@@ -27,6 +27,7 @@ const Sidebar = () => {
                     <FontAwesomeIcon icon={faEnvelope} color='#4d4d4e' />
                 </NavLink>
             </nav>
+            {/* END OF NAV LINKS */}
         </div>
     )
 }
