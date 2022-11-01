@@ -4,6 +4,7 @@ import LogoV from '../../assets/images/logo-v.png'
 import LogoSubtitle from '../../assets/images/logo_sub.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope, faHome, faUser } from '@fortawesome/free-solid-svg-icons'
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 
 const Sidebar = () => {
     return (
@@ -28,6 +29,21 @@ const Sidebar = () => {
                 </NavLink>
             </nav>
             {/* END OF NAV LINKS */}
+
+            <ul>
+                <li>
+                    <a target='_blank' rel='noreferrer' href='https://www.linkedin.com/in/victoria-qn-le/'>
+                        <FontAwesomeIcon icon={faLinkedin} />
+                    </a>
+                </li>
+
+                <li>
+                    <a target='_blank' rel='noreferrer' href='https://github.com/Victoria-Q-Le'>
+                        <FontAwesomeIcon icon={faGithub} />
+                    </a>
+                </li>
+            </ul>
+            {/* END OF OUTSIDE LINKS */}
         </div>
     )
 }
