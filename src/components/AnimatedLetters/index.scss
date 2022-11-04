@@ -6,6 +6,17 @@
     min-width: 10px;
 }
 
+.text-animate-hover {
+    min-width: 10px;
+    display: inline-block;
+    animation-fill-mode: both;
+
+    &:hover {
+        animation: rubberBand 1s;
+        color: #ffd700;
+    }
+}
+
 //adding the delay to each letter base on their class
 @for $i from 1 through 35 {
     .text-animate._#{$i} {
