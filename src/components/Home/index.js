@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import LogoTitle from '../../assets/images/logo-v.png'
 import './index.scss'
 import AnimatedLetters from '../AnimatedLetters'
+import Logo from './Logo'
 
 const Home = () => {
     const [letterClass, setLetterClass] = useState('text-animate')
@@ -14,6 +15,8 @@ const Home = () => {
             setLetterClass('text-animate-hover')
         }, 4000)
     },[])
+
+    // The useEffect to ensure the effect only runs once, after loading the letterClass will be changed to text-animate-hover
 
     return (
         <div className="container home-page">
@@ -32,6 +35,8 @@ const Home = () => {
                 <h2>Software Engineer | Full Stack Developer </h2>
                 <Link to='/contact' className='flat-button'>CONTACT ME</Link>
             </div>
+
+            <Logo />
         </div>
     )
 }
