@@ -21,6 +21,16 @@ const Logo = () => {
                 drawSVG: 0,
                 duration: 20,
             })
+
+            gsap.fromTo(
+                solidLogoRef.current, {
+                    opacity: 0, //the starting point of the animation, which is the opacity. 
+                }, {
+                    opacity: 1, //the third arg of the function is the end state
+                    delay: 4,
+                    duration: 4,
+                }
+            )
     },[]) //want it to refresh only once
 
     return (
