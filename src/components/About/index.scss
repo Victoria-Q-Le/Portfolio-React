@@ -11,6 +11,25 @@
 
 .cubespinner {
     animation-name: spincube; //custom animation
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite; //how long the cube is spinning
+    animation-duration: 12s;
+    transform-style: preserve-3d;
+    transform-origin: 100px 100px 0; //center the rotation of the animation
+    margin-left: calc(50% - 100px);
+
+    div {
+        position: absolute; 
+        width: 200px;
+        height: 200px;
+        border: 1px solid #ccc;
+        background: rgba(255,255,255,0.4);
+        font-size: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 0 20px 0 lightyellow;
+    }
 }
 
 @keyframes spincube {
@@ -23,5 +42,14 @@
     }
     33% {
         transform: rotateY(-90deg) rotateZ(90deg);
+    }
+    50% {
+        transform: rotateY(-180deg) rotateZ(90deg);
+    }
+    66% {
+        transform: rotateY(-270deg) rotateZ(90deg);
+    }
+    83% {
+        transform: rotateX(90deg);
     }
 }
