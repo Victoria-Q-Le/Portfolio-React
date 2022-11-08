@@ -23,9 +23,11 @@ const Logo = () => {
             })
 
             gsap.fromTo(
-                solidLogoRef.current, {
+                solidLogoRef.current, 
+                {
                     opacity: 0, //the starting point of the animation, which is the opacity. 
-                }, {
+                }, 
+                {
                     opacity: 1, //the third arg of the function is the end state
                     delay: 4,
                     duration: 4,
