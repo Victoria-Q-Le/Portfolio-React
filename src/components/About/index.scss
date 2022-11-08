@@ -1,0 +1,27 @@
+.stage-cube-cont {
+    width: 50%;
+    height: 100%;
+    top: 0;
+    padding-top: 18%;
+    margin-left: 0;
+    position: absolute;
+    right: 0;
+    overflow: hidden;
+}
+
+.cubespinner {
+    animation-name: spincube; //custom animation
+}
+
+@keyframes spincube {
+    from, 
+    to { //this is the starting position
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+    16% { //on the 16% of the animation
+        transform: rotateY(-90deg);
+    }
+    33% {
+        transform: rotateY(-90deg) rotateZ(90deg);
+    }
+}
