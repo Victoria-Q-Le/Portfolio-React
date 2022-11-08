@@ -9,7 +9,7 @@
     overflow: hidden;
 }
 
-.cubespinner {
+.cubespinner { //step1: general styling of the animation
     animation-name: spincube; //custom animation
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite; //how long the cube is spinning
@@ -18,7 +18,7 @@
     transform-origin: 100px 100px 0; //center the rotation of the animation
     margin-left: calc(50% - 100px);
 
-    div {
+    div { //step3: styling of the cube holder, the faces 
         position: absolute; 
         width: 200px;
         height: 200px;
@@ -30,24 +30,48 @@
         align-items: center;
         box-shadow: 0 0 20px 0 lightyellow;
     }
+
+    .face1 { //step4: organize faces and put them to their appropriated places.
+        transform: translateZ(100px);
+    }
+
+    .face2 {
+        transform: rotateY(90deg) translateZ(100px);
+    }
+
+    .face3 {
+        transform: rotateY(90deg) rotateX(90deg) translateZ(100px);
+    }
+
+    .face4 {
+        transform: rotateY(180deg) rotateZ(90deg) translateZ(100px);
+    }
+
+    .face5 {
+        transform: rotateY(-90deg) rotateZ(90deg) translateZ(100px);
+    }
+
+    .face6 {
+        transform: rotateX(-90deg) translateZ(100px);
+    }
 }
 
-@keyframes spincube {
-    from, 
-    to { //this is the starting position
+@keyframes spincube { //step 2 define the custome animation
+    from,
+    to {
         transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
     }
-    16% { //on the 16% of the animation
-        transform: rotateY(-90deg);
+    16% { //each animation is about 16% apart because the cube has 6 faces 
+        transform: rotateY(-90deg) rotateZ(90deg);
     }
     33% {
-        transform: rotateY(-90deg) rotateZ(90deg);
+        transform: rotateY(-90deg) rotateX(90deg);
     }
     50% {
         transform: rotateY(-180deg) rotateZ(90deg);
     }
     66% {
-        transform: rotateY(-270deg) rotateZ(90deg);
+        transform: rotateY(-270deg) rotateX(90deg);
     }
     83% {
         transform: rotateX(90deg);
