@@ -34,7 +34,16 @@ const Contact = () => {
                         <form>
                             <ul>
                                 <li className='half'>
-                                    <input type='text' name='name' placeholder='Please Enter Your Name' required/>
+                                    <input type='text' name='name' placeholder='Name' required/>
+                                </li>
+                                <li className='half'>
+                                    <input type='email' name='email' placeholder='Email' required/>
+                                </li>
+                                <li>
+                                    <input placeholder='Subject' type='text' name='subject' required/>
+                                </li>
+                                <li>
+                                    <textarea placeholder='Please Enter Your Message '></textarea>
                                 </li>
                             </ul>
                         </form>
