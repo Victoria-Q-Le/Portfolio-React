@@ -23,6 +23,23 @@ const Contact = () => {
                             idx={15}
                         />
                     </h1>
+                    {/* END OF TITLE  */}
+
+                    <p>
+                        I took a leap of faith to change my career from medical and hoping to and my first job in tech. So let's chat! 
+                    </p>
+                    {/* END OF INTRODUCTION P */}
+
+                    <div className='contact-form'>
+                        <form>
+                            <ul>
+                                <li className='half'>
+                                    <input type='text' name='name' placeholder='Please Enter Your Name' required/>
+                                </li>
+                            </ul>
+                        </form>
+                    </div>
+
                 </div>
             </div>
 
