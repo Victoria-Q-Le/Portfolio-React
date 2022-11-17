@@ -50,5 +50,21 @@
         background: #115173;
         height: 50px;
         font-size: 16px;
+        color: #fff;
+        padding: 20px;
+        min-height: 150px;
+        box-sizing: border-box;
+    }
+
+    .flat-button {
+        color: #ffd700;
+        background: 0 0;
+        font: 11px;
+        letter-spacing: 3px;
+        text-decoration: none;
+        padding: 8px 10x;
+        border: 1px solid #ffd700;
+        float: right;
+        border-radius: 4px;
     }
 }
