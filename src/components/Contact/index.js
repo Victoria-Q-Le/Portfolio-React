@@ -74,6 +74,19 @@ const Contact = () => {
                             </ul>
                         </form>
                     </div>
+                    {/* END OF FORM */}
+
+                </div>
+
+
+                <div className='info-map'>
+                    Victoria Le 
+                    <br />
+                    Boston
+                    <br />
+                    Massachusetts
+                    <br />
+                    <span>leqvictoria@gmail.com</span>
 
                 </div>
             </div>
