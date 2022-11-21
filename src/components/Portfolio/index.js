@@ -14,6 +14,28 @@ const Portfolio = () => {
             setLetterClass('text-animate-hover')
         },3000)
     },[])
+
+    const renderPortfolio = (portfolio) => {
+        return (
+            <div className='images-container'>
+                {
+                    portfolio.map((port, idx) => {
+                        return(
+                            <div className="image-box" key={idx}>
+                                <img 
+                                    className='portfolio-image'
+                                    src={port.cover} 
+                                    alt="portfolio"
+                                />
+                            </div>
+                        )
+                    })
+                }
+            </div>
+        )
+    }
+
+
     return (
         <>
             <div className='container portfolio-page'>
@@ -24,7 +46,7 @@ const Portfolio = () => {
                         idx={15}/>
                 </h1>
 
-                {/* <div>{renderPortfolio}</div> */}
+                <div>{renderPortfolio(portfolioData.portfolio)}</div>
                 
             </div>
 
