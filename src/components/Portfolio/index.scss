@@ -11,7 +11,7 @@
         margin-top: 100px;
     }
 
-    .image-container {
+    .images-container {
         display: flex;
         gap: 15px;
         flex-wrap: wrap;
@@ -41,7 +41,7 @@
             padding: 10px 20px;
             transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
             background: linear-gradient(180deg,rgba(0,0,0,0.2) 0,rgba(0,0,0,1));
-            // bottom: -70px;
+            bottom: -70px;
         }
 
         .title {
@@ -79,6 +79,31 @@
 
         .btn:hover {
             transform: translateY(-3px);
+            background: #ffd700;
+        }
+
+        &:after {
+            content: '';
+            background: linear-gradient(180deg, #ffd700,#000);
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+            z-index: 2;
+            opacity: 0;
+        }
+
+        &:hover::after {
+            opacity: 0.85;
+        }
+        
+        &:hover .content{
+            bottom: 0;
+            background: transparent;
         }
     }
 }
