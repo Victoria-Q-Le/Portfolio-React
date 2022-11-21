@@ -73,6 +73,12 @@
            background: transparent;
            text-transform: uppercase;
            font-weight: 700;
+           transition: all  0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+           cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
         }
     }
 }
