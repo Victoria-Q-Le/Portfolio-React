@@ -2,10 +2,12 @@ import { useEffect, useState } from 'react'
 import Loader from 'react-loaders'
 import AnimatedLetters from '../AnimatedLetters'
 import './index.scss'
+import portfolioData from '../../data/portfolio.json'
 
 const Portfolio = () => {
 
     const [letterClass, setLetterClass] = useState('text-animate')
+    console.log(portfolioData)
     
     useEffect(() => {
         setTimeout(() =>{
@@ -22,8 +24,11 @@ const Portfolio = () => {
                         idx={15}/>
                 </h1>
 
-                <Loader type='pacman' />
+                {/* <div>{renderPortfolio}</div> */}
+                
             </div>
+
+            <Loader type='pacman' />
         </>
         
     )
