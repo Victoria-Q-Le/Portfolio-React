@@ -14,6 +14,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.dashboard {
+  margin-top: 200px;
+  margin-left: 200px;
+}
+
 /* Default value for body tag  */
 
 @media screen and (max-width: 1200px) {
