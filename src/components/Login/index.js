@@ -1,6 +1,9 @@
 const Login = () => {
     return (
-        <div>
+        <div className="dashboard">
+            <button>
+                Sign in with Google
+            </button>
 
         </div>
     )
