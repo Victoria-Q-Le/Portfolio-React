@@ -1,3 +1,5 @@
+import {auth} from '../../firebase'
+
 const Home = () => {
     return (
         <div className="dashboard">
@@ -6,7 +8,8 @@ const Home = () => {
                 <p> <textarea placeholder = "Description" /> </p>
                 <p> <input type='text' placeholder = "Link to Site" /> </p>
                 <p> <input type='file' placeholder = "Cover" /> </p>
-                <button>Submit</button>
+                <button type="submit">Submit</button>
+                <button onClick={() => auth.signOut()}>Log Out </button>
            </form>
         </div>
     )
