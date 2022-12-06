@@ -4,6 +4,13 @@ import {auth} from '../../firebase'
 const Home = () => {
 
     const form = useRef()
+    
+    const submitPortfolio = (e) => {
+        e.preventDefault()
+        const title = form.current[0]?.value
+        const decription = form.current[1]?.value
+
+    }
 
     return (
         <div className="dashboard">
