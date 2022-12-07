@@ -9,6 +9,8 @@ const Home = () => {
         e.preventDefault()
         const title = form.current[0]?.value
         const decription = form.current[1]?.value
+        const url = form.current[2]?.value
+        const cover = form.current[3]?.files[0] //because this is not a text so we will access the file, and we only allowed 1 img for the file idx is 0
 
     }
 
