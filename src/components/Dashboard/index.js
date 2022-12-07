@@ -16,7 +16,7 @@ const Dashboard = () => {
                 setUser(null)
             }
         })
-    }, [])
+    }, [auth])
 
     return (
         <div> 
