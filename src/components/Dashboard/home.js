@@ -1,6 +1,6 @@
 import { useRef } from "react"
 import { auth, storage } from "../../firebase"
-import {ref} from 'firebase/storage'
+import {getDownloadURL, ref, uploadBytes} from 'firebase/storage'
 
 const Home = () => {
 
@@ -13,8 +13,34 @@ const Home = () => {
         const url = form.current[2]?.value
         const cover = form.current[3]?.files[0] //input is not text, so type is file and only 1 file so the idx is 0
 
-        const storageRef = ref(storage, `portfolio/${cover}` )
+        const storageRef = ref(storage, `portfolio/${cover.name}` )
         
+        uploadBytes(storageRef, cover) //this is a promise 
+            .then( //if success
+                (snapshot) => {
+                    getDownloadURL(snapshot.ref)
+                        .then((downloadUrl) => {
+                            savePortfolio({
+                                title,
+                                description,
+                                url,
+                                cover: downloadUrl
+                            })
+                        })
+                }, (error) => { //error handler
+                    console.log(error)
+                    savePortfolio({
+                        title,
+                        description,
+                        url,
+                        cover: null
+                    })
+                }
+            )
+    }
+
+    const savePortfolio = (portfolio) => {
+        console.log(portfolio)
     }
 
     return (

@@ -1,26 +1,24 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth"
-import { getStorage } from "firebase/storage";
-import { getFirestore } from "firebase/firestore/lite"
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyB2DMwkYerBHiTJVzvcZ8tUI_RIVFCy-zM",
-  authDomain: "react-portfolio-dashboar-4c88e.firebaseapp.com",
-  projectId: "react-portfolio-dashboar-4c88e",
-  storageBucket: "react-portfolio-dashboar-4c88e.appspot.com",
-  messagingSenderId: "939640507262",
-  appId: "1:939640507262:web:605aba893a0b17ff02812f"
+  apiKey: "AIzaSyBAigATY1zG5TaLyTOI4eeInzaNaSmKRBA",
+  authDomain: "react-portfolio-dashboar-4694a.firebaseapp.com",
+  projectId: "react-portfolio-dashboar-4694a",
+  storageBucket: "react-portfolio-dashboar-4694a.appspot.com",
+  messagingSenderId: "527862268690",
+  appId: "1:527862268690:web:1191f74e18cab7524569cb"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-export const auth = getAuth()
-const provider = new GoogleAuthProvider()
-export const db = getFirestore(app) //this is db of portfolios
-export const storage = getStorage(app)
 
-export const signInWithGoogle = () => signInWithPopup(auth, provider)
+
+
+
+////////////////////////////GOALS////////////////////
+//1. Create a method to log in 
+//2. Create a method to store the image in firebase storage to upload and store the portfolio uploaded img 
