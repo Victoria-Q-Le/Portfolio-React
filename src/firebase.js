@@ -1,5 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -15,10 +16,15 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
-
-
-
 ////////////////////////////GOALS////////////////////
-//1. Create a method to log in 
+//1. Create a method to log in (in this case I used gg sign in method and export that)
+//  Step 1: Authorization
+export const auth = getAuth()
+//  Step 2: Provider
+const provider = new GoogleAuthProvider()
+//  Step 3: export the method
+export const signInWithGoogle = () => signInWithPopup(auth, provider)
+
+
+
 //2. Create a method to store the image in firebase storage to upload and store the portfolio uploaded img 
