@@ -1,6 +1,5 @@
 import { useRef } from "react"
 import { auth } from "../../firebase"
-import {ref} from 'firebase/storage'
 
 const Home = () => {
 
@@ -13,7 +12,7 @@ const Home = () => {
         const url = form.current[2]?.value
         const cover = form.current[3]?.files[0] //input is not text, so type is file and only 1 file so the idx is 0
 
-        console.log(title);
+        console.log(title, description, url, cover);
         
     }
 
