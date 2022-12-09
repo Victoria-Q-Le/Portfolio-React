@@ -4,6 +4,8 @@
 
 import { useEffect, useState } from "react"
 import { getAuth, onAuthStateChanged } from 'firebase/auth'
+import Home from './home'
+import Login from '../Login'
 
 const Dashboard = () => {
 
@@ -12,11 +14,20 @@ const Dashboard = () => {
     const auth = getAuth() //authenticate the user
 
     useEffect(() => {
-        onAuthStateChanged() //2 args: the auth state and the method 
+        onAuthStateChanged(auth, (user) => { //2 args: the auth state and a function 
+            if(user){ //if user logged in, setUser = user 
+                setUser(user)
+            } else { //if not, reset the state back to null
+                setUser(null)
+            }
+        }) 
     }, []) // performed only once <=> []
 
     return (
-        <div>Hello</div>
+        <div>
+            { user ? <Home /> : <Login /> } 
+            {/* if user logged in, display the dashboard. If not, display the log in component */}
+        </div>
     )
 }
 
