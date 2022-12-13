@@ -1,6 +1,6 @@
 import { useRef } from "react"
 import { auth, storage } from "../../firebase"
-import { ref, uploadBytes } from 'firebase/storage'
+import { getDownloadURL, ref, uploadBytes } from 'firebase/storage'
 
 const Home = () => {
     
@@ -19,9 +19,27 @@ const Home = () => {
         // 1. Upload the images to the firebase storage
         const storageRef = ref(storage, `portfolio/${image.name}`) //2args: the ref to storage - created in firebase.js, and the url - where the image is stored 
         // 2. Then get the image url then save it to the collection/document 
-        console.log(name, description, url, image);
+        uploadBytes(storageRef, image) //2args: storageRef - the ref to the location I want to store, and the file itself. This is a promise
+            .then(
+                (snapshot) => { //after sucessfully uploaded the image, retrieve back a snapshot. On snapshot, receive an url used to store in the collection and later on displayed on the website.
+                    getDownloadURL(snapshot, ref)
+                        .then((downloadUrl) => {
+                            savePortfolio({
+                                name, 
+                                description, 
+                                url, 
+                                image: downloadUrl})
+                        })
+                }
+            )
         
     }
+
+    const savePortfolio = (portfolio) => {
+
+    }
+
+
     return (
         <div className="dashboard">
             <form ref={form} onSubmit={submitPortfolio}>
