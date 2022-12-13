@@ -1,6 +1,8 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
+import { getStorage } from "firebase/storage";
+import { getFirestore } from 'firebase/firestore/lite'
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -28,3 +30,5 @@ export const signInWithGoogle = () => signInWithPopup(auth, provider)
 
 
 //2. Create a method to store the image in firebase storage to upload and store the portfolio uploaded img 
+export const storage = getStorage(app)
+export const db = getFirestore(app) //the actual db of all the portfolios

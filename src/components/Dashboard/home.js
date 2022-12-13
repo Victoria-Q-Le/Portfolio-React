@@ -1,5 +1,6 @@
 import { useRef } from "react"
-import { auth } from "../../firebase"
+import { auth, storage } from "../../firebase"
+import { ref, uploadBytes } from 'firebase/storage'
 
 const Home = () => {
     
@@ -12,6 +13,13 @@ const Home = () => {
         const url = form.current[2].value
         const image = form.current[3].files[0] //this is not text input, so access the file instead, and only one image to access the first image 
         
+
+
+        //////////////////GOALS////////////////
+        // 1. Upload the images to the firebase storage
+        const storageRef = ref(storage, `portfolio/${image.name}`) //2args: the ref to storage - created in firebase.js, and the url - where the image is stored 
+        // 2. Then get the image url then save it to the collection/document 
+        console.log(name, description, url, image);
         
     }
     return (
@@ -31,3 +39,4 @@ const Home = () => {
 export default Home
 
 // This comp will contain a form to list out the detail and upload the portforlio to firebase
+
