@@ -7,6 +7,11 @@ const Home = () => {
 
     const submitPortfolio = (e) => {
         e.preventDefault()
+        const name = form.current[0].value
+        const description = form.current[1].value
+        const url = form.current[2].value
+        const image = form.current[3].files[0] //this is not text input, so access the file instead, and only one image to access the first image 
+        
         
     }
     return (
