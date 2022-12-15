@@ -19,13 +19,14 @@ const Portfolio = () => {
 
     useEffect(() => {
         getPortfolio()
-    })
+    },[])
 
     const getPortfolio = async () => {
        const querySnapshot = await getDocs(collection(db,'portfolio')) //return back a collection
-       console.log(querySnapshot)
-
+       setPortfolio(querySnapshot.docs.map((doc) => doc.data()))//convert the docs inside collection back to json form
     }
+
+    console.log(portfolio);
     
 
     const renderPortfolio = (portfolio) => {
