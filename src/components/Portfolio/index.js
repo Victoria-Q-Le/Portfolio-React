@@ -3,17 +3,30 @@ import Loader from 'react-loaders'
 import AnimatedLetters from '../AnimatedLetters'
 import './index.scss'
 import portfolioData from '../../data/portfolio.json'
+import { collection, getDocs } from 'firebase/firestore/lite'
+import { db } from '../../firebase'
 
 const Portfolio = () => {
 
     const [letterClass, setLetterClass] = useState('text-animate')
-    console.log(portfolioData)
+    const [portfolio, setPortfolio] = useState([])
     
     useEffect(() => {
         setTimeout(() =>{
             setLetterClass('text-animate-hover')
         },3000)
     },[])
+
+    useEffect(() => {
+        getPortfolio()
+    })
+
+    const getPortfolio = async () => {
+       const querySnapshot = await getDocs(collection(db,'portfolio')) //return back a collection
+       console.log(querySnapshot)
+
+    }
+    
 
     const renderPortfolio = (portfolio) => {
         return (
