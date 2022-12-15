@@ -1,6 +1,8 @@
 import { useRef } from "react"
-import { auth, storage } from "../../firebase"
+import { auth, storage, db } from "../../firebase"
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage'
+import { addDoc } from "firebase/firestore/lite"
+import { collection } from "firebase/firestore/lite"
 
 const Home = () => {
     
@@ -49,8 +51,16 @@ const Home = () => {
         )
     }
 
-    const savePortfolio = (portfolio) => {
+
+    //This function will save the portfolio to the collection
+    const savePortfolio = async (portfolio) => {
         console.log(portfolio);
+        try {
+            await addDoc(collection(db, 'portfolio'), portfolio) //using the collection method to target the collection, the name of the collection firebase is portfolio which is inside the db database. Lastly the file itself aka portfolio
+            window.location.reload(false)
+        } catch (error) {
+            alert('Failed to add portfolio')
+        }
     }
 
 
