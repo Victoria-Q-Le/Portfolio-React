@@ -19,30 +19,34 @@ const Home = () => {
         // 1. Upload the images to the firebase storage
         const storageRef = ref(storage, `portfolio/${image.name}`) //2args: the ref to storage - created in firebase.js, and the url - where the image is stored 
         // 2. Then get the image url then save it to the collection/document 
-        uploadBytes(storageRef, image) //2args: storageRef - the ref to the location I want to store, and the file itself. This is a promise
-            .then(
-                (snapshot) => { //after sucessfully uploaded the image, retrieve back a snapshot. On snapshot, receive an url used to store in the collection and later on displayed on the website.
-                    getDownloadURL(snapshot.ref)
-                        .then((downloadUrl) => {
-                            savePortfolio({
-                                name, 
-                                description, 
-                                url, 
-                                image: downloadUrl
-                            })
-                        })
-                }, (error) => { //error handler, in case cant save image url
+        uploadBytes(storageRef, image).then( //2args: storageRef - the ref to the location I want to store, and the file itself. This is a promise
+            (snapshot) => {
+                getDownloadURL(snapshot.ref).then((downloadUrl) => {
+                    savePortfolio({ //after sucessfully uploaded the image, retrieve back a snapshot. On snapshot, receive an url used to store in the collection and later on displayed on the website.
+                        name, 
+                        description,
+                        url,
+                        image: downloadUrl
+                    })
+                }, (error) => {
                     console.log(error)
                     savePortfolio({
-                        name, 
-                        description, 
-                        url, 
+                        name,
+                        description,
+                        url,
                         image: null
                     })
-                }
-            )
-        
-    }
+                })
+            }, (error) => {
+                console.log(error)
+                savePortfolio({
+                    name,
+                    description,
+                    url,
+                    image: null
+                })
+            }
+        )
 
     const savePortfolio = (portfolio) => {
         console.log(portfolio);
