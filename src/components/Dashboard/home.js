@@ -47,6 +47,7 @@ const Home = () => {
                 })
             }
         )
+    }
 
     const savePortfolio = (portfolio) => {
         console.log(portfolio);
@@ -70,4 +71,3 @@ const Home = () => {
 export default Home
 
 // This comp will contain a form to list out the detail and upload the portforlio to firebase
-
