@@ -22,21 +22,30 @@ const Home = () => {
         uploadBytes(storageRef, image) //2args: storageRef - the ref to the location I want to store, and the file itself. This is a promise
             .then(
                 (snapshot) => { //after sucessfully uploaded the image, retrieve back a snapshot. On snapshot, receive an url used to store in the collection and later on displayed on the website.
-                    getDownloadURL(snapshot, ref)
+                    getDownloadURL(snapshot.ref)
                         .then((downloadUrl) => {
                             savePortfolio({
                                 name, 
                                 description, 
                                 url, 
-                                image: downloadUrl})
+                                image: downloadUrl
+                            })
                         })
+                }, (error) => { //error handler, in case cant save image url
+                    console.log(error)
+                    savePortfolio({
+                        name, 
+                        description, 
+                        url, 
+                        image: null
+                    })
                 }
             )
         
     }
 
     const savePortfolio = (portfolio) => {
-
+        console.log(portfolio);
     }
 
 
