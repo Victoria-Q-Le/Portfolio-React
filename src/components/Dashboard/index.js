@@ -21,7 +21,7 @@ const Dashboard = () => {
                 setUser(null)
             }
         }) 
-    }, [auth]) // performed only once <=> []
+    }) // performed only once <=> []
 
     return (
         <div>
