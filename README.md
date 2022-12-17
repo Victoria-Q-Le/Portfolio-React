@@ -1,43 +1,41 @@
-# Getting Started with Create React App
+# Victoria's React Portfolio
 
-This project is a personal portfolio created by React and other dependencies packages 
+The site is live at https://victoriaqle.netlify.app
 
-## Available Scripts
+## What is it? 
 
-In the project directory, you can run:
+Personal portfolio utilized React and other dependencies package. The Layout component with body and html script tags is used as container for other page components. 
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Home Page 
 
-### `npm test`
+The home page feature the Animated Letters component which receives 3 arguments: letterClass, strArray, and idx to apply the effect and delay time so the letters will appear one at a time continously. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Everytime the page gets reloaded, the Pacman loader will show up. This is make possible by utilizing the loader.scss package. 
+More info can be found at [https://www.npmjs.com/package/react-loaders]
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### About Page
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+About Page is used to showcase the skillset and a little bit of story about me and my career change. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+On this page, there is spining cube that shows different languages/frameworks I have come across and worked with. This spinner was  created using custom animation package. 
+More info can be found at [https://www.npmjs.com/package/animate.css-react]
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Contact Page 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Contact Page includes 2 main sections: 
+    The Contact form that viewwers can enter the message and mean of contacts in case they want to stay connected. I used [emails.js](https://www.npmjs.com/package/@emailjs/browser) the set up the contact form. All the input from form will be forwarded to a pre setup email address. 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    The Map featured on this page by using the [React Leaflet](https://react-leaflet.js.org/)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+
+### Portfolio Page
+
+Portfolio page is a collection of previous projects. 
+
 
 ## Learn More
 
