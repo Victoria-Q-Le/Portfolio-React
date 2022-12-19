@@ -26,10 +26,9 @@ More info can be found at [https://www.npmjs.com/package/animate.css-react]
 
 ### Contact Page 
 
-Contact Page includes 2 main sections: 
-    The Contact form that viewwers can enter the message and mean of contacts in case they want to stay connected. I used [emails.js](https://www.npmjs.com/package/@emailjs/browser) the set up the contact form. All the input from form will be forwarded to a pre setup email address. 
+The Contact form that viewwers can enter the message and mean of contacts in case they want to stay connected. I used [emails.js](https://www.npmjs.com/package/@emailjs/browser) the set up the contact form. All the input from form will be forwarded to a pre setup email address. 
 
-    The Map featured on this page by using the [React Leaflet](https://react-leaflet.js.org/)
+The Map featured on this page by using the [leaflet](https://react-leaflet.js.org/)
 
 
 ### Portfolio Page
