@@ -36,12 +36,12 @@ Contact Page includes 2 main sections:
 
 Portfolio page is a collection of previous projects. 
 
+Firebase is used to handle authentication, storing and retrieving data to make the web page more dynamic. 
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Challenges
+
 
 ### Code Splitting
 
