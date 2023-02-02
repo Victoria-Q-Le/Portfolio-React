@@ -51,7 +51,7 @@ const Contact = () => {
                     {/* END OF TITLE  */}
 
                     <p>
-                        I took a leap of faith to change my career from medical and hoping to and my first job in tech. So let's chat! 
+                        I'm hoping to expand my career and knowledge in tech. So let's chat!
                     </p>
                     {/* END OF INTRODUCTION P */}
 
